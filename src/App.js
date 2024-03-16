@@ -1,125 +1,3 @@
-// import React, { useState } from 'react';
-
-// function App() {
-//   var [value, setValue] = useState("");
-
-//   const Clickfunction = (number) => {
-//     setValue(value.toString() + number);
-//   };
-
-//   const Clearfunction = () => {
-//     setValue("");
-//   };
-
-//   return (
-//     <div className='calculator'>
-//       <div>{value}</div>
-//       <button onClick={() => Clickfunction("1")}>1</button>
-//       <button onClick={() => Clickfunction("2")}>2</button>
-//       <button onClick={() => Clickfunction("3")}>3</button>
-//       <button onClick={() => Clickfunction("4")}>4</button>
-//       <button onClick={() => Clickfunction("5")}>5</button>
-//       <button onClick={() => Clickfunction("6")}>6</button>
-//       <button onClick={() => Clickfunction("7")}>7</button>
-//       <button onClick={() => Clickfunction("8")}>8</button>
-//       <button onClick={() => Clickfunction("9")}>9</button>
-//       <button onClick={Clearfunction}>Clear</button>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-
-// ==============================================  method 1 =======================
-
-// import React, { useState } from 'react';
-// import './App.css';
-
-// function App() {
-//   const [value, setValue] = useState('0');
-//   const [currentInput, setCurrentInput] = useState('');
-//   const [operator, setOperator] = useState(null);
-
-//   const handleNumberClick = (number) => {
-//     if (value === '0' || currentInput === '0') {
-//       setValue(number.toString());
-//       setCurrentInput(number.toString());
-//     } else {
-//       setValue(value + number);
-//       setCurrentInput(currentInput + number);
-//     }
-//   };
-
-//   const handleOperatorClick = (op) => {
-//     if (operator !== null) {
-//       // If an operator is already set, evaluate the expression
-//       const result = eval (value);
-//       setValue(result);
-//       setCurrentInput(result);
-//     }
-//     setOperator(op);
-//     setValue(value + op);
-//     setCurrentInput('');
-//   };
-
-//   const handleEqualsClick = () => {
-//     if (operator !== null) {
-//       const result = (value);
-//       setValue(result);
-//       setCurrentInput(result);
-//       setOperator(null);
-//     }
-//   };
-
-//   const handleClearClick = () => {
-//     setValue('0');
-//     setCurrentInput('');
-//     setOperator(null);
-//   };
-
-//   return (
-//     <div className="calculator">
-//       <h2>{value}</h2>
-//       <div className="buttons">
-//         <button onClick={() => handleNumberClick('1')}>1</button>
-//         <button onClick={() => handleNumberClick('2')}>2</button>
-//         <button onClick={() => handleNumberClick('3')}>3</button>
-//         <button onClick={() => handleOperatorClick('+')}>+</button>
-
-//         <button onClick={() => handleNumberClick('4')}>4</button>
-//         <button onClick={() => handleNumberClick('5')}>5</button>
-//         <button onClick={() => handleNumberClick('6')}>6</button>
-//         <button onClick={() => handleOperatorClick('-')}>-</button>
-
-//         <button onClick={() => handleNumberClick('7')}>7</button>
-//         <button onClick={() => handleNumberClick('8')}>8</button>
-//         <button onClick={() => handleNumberClick('9')}>9</button>
-//         <button onClick={() => handleOperatorClick('*')}>*</button>
-
-//         <button onClick={() => handleNumberClick('0')}>0</button>
-//         <button onClick={() => handleClearClick()}>C</button>
-//         <button onClick={() => handleEqualsClick()}>=</button>
-//         <button onClick={() => handleOperatorClick('/')}>/</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-
-
-
-
-
-
-
-// ======================================= method 2==================================
-
-
 import React, { useState } from 'react';
 import './App.css';
 
@@ -183,12 +61,11 @@ function App() {
     }
   };
   const handleDoubleZeroClick = () => {
-    // Append '00' to the current input
     setValue(value + '00');
     setCurrentInput(currentInput + '00');
   };
   const handlePercentageClick = () => {
-    // Convert the current value to a percentage
+  
     const percentageValue = (parseFloat(value) / 100).toString();
     setValue(percentageValue);
     setCurrentInput(percentageValue);
